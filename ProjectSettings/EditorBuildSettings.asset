@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/MATWLT.unity
+    guid: acad1e59d6f083f4b86769e2db943009
+  - enabled: 0
+    path: Assets/Scenes/KirbyWLT.unity
+    guid: 6c4033559de141641942e16807bd61a9
+  - enabled: 0
+    path: Assets/Scenes/KirbyWLT.unity
+    guid: 6c4033559de141641942e16807bd61a9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/KirbyWLTManager.unity
+    guid: e4d41ec0145662b488a7666e6ead7a78
+  - enabled: 0
+    path: Assets/Study/TutorialWLT.unity
+    guid: ce3206bdbdd665c44988116a31b17401
+  - enabled: 0
+    path: Assets/Scenes/WLT_tutorial.unity
+    guid: 2b75734d721a8874ca6d71e43fb2fb60
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 30073e69b36240b4197e1f6b0ec83538, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 64495e76dbcd14440949dd5753499c06, type: 2}

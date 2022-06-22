@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: cc910d732ffba634384b90072e8c18a6
+timeCreated: 1491494552
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ChairA_1
+    100004: ChairA_2
+    100006: ChairB_1
+    100008: Cloth_1
+    100010: Cloth_2
+    100012: Icebox_1
+    100014: IceBox_2
+    100016: IceboxA_1
+    100018: IceboxA_2
+    100020: New_hut
+    100022: pPlane1
+    100024: pPlane2
+    100026: pSphere1
+    100028: Safety_tube1
+    100030: Safety_tube2
+    100032: sand_base1
+    100034: Table1
+    100036: Tine_1
+    100038: Tine_2
+    100040: Umberella_1
+    100042: Umberella_2
+    100044: Umbrella2_1
+    100046: Umbrella2_2
+    100048: Umbrella_set1
+    100050: Umbrella_set_2
+    100052: water_shade
+    100054: Wine_bottle_1
+    100056: Wine_bottle_2
+    100058: Wine_bottle_3
+    400000: //RootNode
+    400002: ChairA_1
+    400004: ChairA_2
+    400006: ChairB_1
+    400008: Cloth_1
+    400010: Cloth_2
+    400012: Icebox_1
+    400014: IceBox_2
+    400016: IceboxA_1
+    400018: IceboxA_2
+    400020: New_hut
+    400022: pPlane1
+    400024: pPlane2
+    400026: pSphere1
+    400028: Safety_tube1
+    400030: Safety_tube2
+    400032: sand_base1
+    400034: Table1
+    400036: Tine_1
+    400038: Tine_2
+    400040: Umberella_1
+    400042: Umberella_2
+    400044: Umbrella2_1
+    400046: Umbrella2_2
+    400048: Umbrella_set1
+    400050: Umbrella_set_2
+    400052: water_shade
+    400054: Wine_bottle_1
+    400056: Wine_bottle_2
+    400058: Wine_bottle_3
+    2300000: ChairA_1
+    2300002: ChairA_2
+    2300004: ChairB_1
+    2300006: Cloth_1
+    2300008: Cloth_2
+    2300010: IceBox_2
+    2300012: IceboxA_1
+    2300014: IceboxA_2
+    2300016: New_hut
+    2300018: pPlane1
+    2300020: pPlane2
+    2300022: pSphere1
+    2300024: Safety_tube1
+    2300026: Safety_tube2
+    2300028: sand_base1
+    2300030: Table1
+    2300032: Tine_1
+    2300034: Tine_2
+    2300036: Umberella_1
+    2300038: Umberella_2
+    2300040: Umbrella2_1
+    2300042: Umbrella2_2
+    2300044: water_shade
+    2300046: Wine_bottle_1
+    2300048: Wine_bottle_2
+    2300050: Wine_bottle_3
+    3300000: ChairA_1
+    3300002: ChairA_2
+    3300004: ChairB_1
+    3300006: Cloth_1
+    3300008: Cloth_2
+    3300010: IceBox_2
+    3300012: IceboxA_1
+    3300014: IceboxA_2
+    3300016: New_hut
+    3300018: pPlane1
+    3300020: pPlane2
+    3300022: pSphere1
+    3300024: Safety_tube1
+    3300026: Safety_tube2
+    3300028: sand_base1
+    3300030: Table1
+    3300032: Tine_1
+    3300034: Tine_2
+    3300036: Umberella_1
+    3300038: Umberella_2
+    3300040: Umbrella2_1
+    3300042: Umbrella2_2
+    3300044: water_shade
+    3300046: Wine_bottle_1
+    3300048: Wine_bottle_2
+    3300050: Wine_bottle_3
+    4300000: New_hut
+    4300002: ChairA_1
+    4300004: IceBox_2
+    4300006: ChairB_1
+    4300008: ChairA_2
+    4300010: Tine_1
+    4300012: Wine_bottle_1
+    4300014: Wine_bottle_2
+    4300016: Wine_bottle_3
+    4300018: Tine_2
+    4300020: Table1
+    4300022: pPlane1
+    4300024: pPlane2
+    4300026: Cloth_1
+    4300028: Cloth_2
+    4300030: Umberella_1
+    4300032: Umberella_2
+    4300034: Umbrella2_1
+    4300036: Umbrella2_2
+    4300038: IceboxA_1
+    4300040: IceboxA_2
+    4300042: Safety_tube1
+    4300044: Safety_tube2
+    4300046: pSphere1
+    4300048: sand_base1
+    4300050: water_shade
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

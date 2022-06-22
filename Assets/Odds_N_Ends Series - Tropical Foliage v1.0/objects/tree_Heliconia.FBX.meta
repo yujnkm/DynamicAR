@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 91253255974ab514582ca651d70de041
+timeCreated: 1459588891
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: hel_FlowerPod_01
+    100002: hel_FlowerPod_02
+    100004: hel_FlowerPod_03
+    100006: hel_FlowerPod_04
+    100008: heliconia_Leaf_01
+    100010: heliconia_Leaf_02
+    100012: heliconia_Leaf_03
+    100014: heliconia_Leaf_04
+    100016: heliconia_Leaf_05
+    100018: heliconia_Leaf_06
+    100020: heliconia_Leaf_07
+    100022: heliconia_Leaf_08
+    100024: heliconia_Leaf_09
+    100026: heliconia_Leaf_10
+    100028: heliconia_Leaf_11
+    100030: heliconia_Leaf_12
+    100032: heliconia_Leaf_13
+    100034: heliconia_Leaf_14
+    100036: heliconia_Leaf_15
+    100038: heliconia_Leaf_16
+    100040: heliconia_Leaf_17
+    100042: heliconia_Leaf_18
+    100044: heliconia_Leaf_19
+    100046: heliconia_Leaf_20
+    100048: heliconia_Leaf_21
+    100050: heliconia_Leaf_22
+    100052: heliconiaFlowerStem003
+    100054: heliconiaFlowerStem004
+    100056: heliconiaFlowerStem02
+    100058: heliconiaFlowerStem_01
+    100060: //RootNode
+    100062: tree_Heliconia_Stems
+    400000: hel_FlowerPod_01
+    400002: hel_FlowerPod_02
+    400004: hel_FlowerPod_03
+    400006: hel_FlowerPod_04
+    400008: heliconia_Leaf_01
+    400010: heliconia_Leaf_02
+    400012: heliconia_Leaf_03
+    400014: heliconia_Leaf_04
+    400016: heliconia_Leaf_05
+    400018: heliconia_Leaf_06
+    400020: heliconia_Leaf_07
+    400022: heliconia_Leaf_08
+    400024: heliconia_Leaf_09
+    400026: heliconia_Leaf_10
+    400028: heliconia_Leaf_11
+    400030: heliconia_Leaf_12
+    400032: heliconia_Leaf_13
+    400034: heliconia_Leaf_14
+    400036: heliconia_Leaf_15
+    400038: heliconia_Leaf_16
+    400040: heliconia_Leaf_17
+    400042: heliconia_Leaf_18
+    400044: heliconia_Leaf_19
+    400046: heliconia_Leaf_20
+    400048: heliconia_Leaf_21
+    400050: heliconia_Leaf_22
+    400052: heliconiaFlowerStem003
+    400054: heliconiaFlowerStem004
+    400056: heliconiaFlowerStem02
+    400058: heliconiaFlowerStem_01
+    400060: //RootNode
+    400062: tree_Heliconia_Stems
+    2300000: heliconia_Leaf_01
+    2300002: heliconia_Leaf_02
+    2300004: heliconia_Leaf_03
+    2300006: heliconia_Leaf_04
+    2300008: heliconia_Leaf_05
+    2300010: heliconia_Leaf_06
+    2300012: heliconia_Leaf_07
+    2300014: heliconia_Leaf_08
+    2300016: heliconia_Leaf_09
+    2300018: heliconia_Leaf_10
+    2300020: heliconia_Leaf_11
+    2300022: heliconia_Leaf_12
+    2300024: heliconia_Leaf_13
+    2300026: heliconia_Leaf_14
+    2300028: heliconia_Leaf_15
+    2300030: heliconia_Leaf_16
+    2300032: heliconia_Leaf_17
+    2300034: heliconia_Leaf_18
+    2300036: heliconia_Leaf_19
+    2300038: heliconia_Leaf_20
+    2300040: heliconia_Leaf_21
+    2300042: heliconia_Leaf_22
+    2300044: heliconiaFlowerStem003
+    2300046: heliconiaFlowerStem004
+    2300048: heliconiaFlowerStem02
+    2300050: heliconiaFlowerStem_01
+    2300052: tree_Heliconia_Stems
+    3300000: heliconia_Leaf_01
+    3300002: heliconia_Leaf_02
+    3300004: heliconia_Leaf_03
+    3300006: heliconia_Leaf_04
+    3300008: heliconia_Leaf_05
+    3300010: heliconia_Leaf_06
+    3300012: heliconia_Leaf_07
+    3300014: heliconia_Leaf_08
+    3300016: heliconia_Leaf_09
+    3300018: heliconia_Leaf_10
+    3300020: heliconia_Leaf_11
+    3300022: heliconia_Leaf_12
+    3300024: heliconia_Leaf_13
+    3300026: heliconia_Leaf_14
+    3300028: heliconia_Leaf_15
+    3300030: heliconia_Leaf_16
+    3300032: heliconia_Leaf_17
+    3300034: heliconia_Leaf_18
+    3300036: heliconia_Leaf_19
+    3300038: heliconia_Leaf_20
+    3300040: heliconia_Leaf_21
+    3300042: heliconia_Leaf_22
+    3300044: heliconiaFlowerStem003
+    3300046: heliconiaFlowerStem004
+    3300048: heliconiaFlowerStem02
+    3300050: heliconiaFlowerStem_01
+    3300052: tree_Heliconia_Stems
+    4300000: heliconia_Leaf_02
+    4300002: heliconia_Leaf_03
+    4300004: heliconia_Leaf_22
+    4300006: heliconia_Leaf_19
+    4300008: heliconia_Leaf_21
+    4300010: heliconia_Leaf_17
+    4300012: heliconia_Leaf_16
+    4300014: heliconia_Leaf_15
+    4300016: heliconia_Leaf_14
+    4300018: heliconia_Leaf_13
+    4300020: heliconia_Leaf_12
+    4300022: heliconia_Leaf_11
+    4300024: heliconia_Leaf_09
+    4300026: heliconia_Leaf_08
+    4300028: heliconia_Leaf_07
+    4300030: heliconia_Leaf_05
+    4300032: heliconia_Leaf_04
+    4300034: heliconia_Leaf_01
+    4300036: heliconiaFlowerStem_01
+    4300038: heliconiaFlowerStem02
+    4300040: heliconiaFlowerStem003
+    4300042: heliconiaFlowerStem004
+    4300044: heliconia_Leaf_06
+    4300046: heliconia_Leaf_10
+    4300048: heliconia_Leaf_18
+    4300050: heliconia_Leaf_20
+    4300052: tree_Heliconia_Stems
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

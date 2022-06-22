@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 4f4edcb32f8e53840b250462cab66b56
+timeCreated: 1459649049
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: tp_02_Leaf_01
+    100002: tp_02_Leaf_02
+    100004: tp_02_Leaf_03
+    100006: tp_02_Leaf_04
+    100008: tp_02_Leaf_05
+    100010: tp_02_Leaf_06
+    100012: tp_02_Leaf_07
+    100014: tp_02_Leaf_08
+    100016: tp_02_Leaf_09
+    100018: tp_02_Leaf_10
+    100020: tp_02_Leaf_11
+    100022: tp_02_Leaf_12
+    100024: tp_02_Leaf_13
+    100026: tp_02_Leaf_14
+    100028: tp_02_Leaf_15
+    100030: tp_02_Leaf_16
+    100032: tp_02_Leaf_17
+    100034: //RootNode
+    100036: tropicalPlant_02_Stems
+    400000: tp_02_Leaf_01
+    400002: tp_02_Leaf_02
+    400004: tp_02_Leaf_03
+    400006: tp_02_Leaf_04
+    400008: tp_02_Leaf_05
+    400010: tp_02_Leaf_06
+    400012: tp_02_Leaf_07
+    400014: tp_02_Leaf_08
+    400016: tp_02_Leaf_09
+    400018: tp_02_Leaf_10
+    400020: tp_02_Leaf_11
+    400022: tp_02_Leaf_12
+    400024: tp_02_Leaf_13
+    400026: tp_02_Leaf_14
+    400028: tp_02_Leaf_15
+    400030: tp_02_Leaf_16
+    400032: tp_02_Leaf_17
+    400034: //RootNode
+    400036: tropicalPlant_02_Stems
+    2300000: tp_02_Leaf_01
+    2300002: tp_02_Leaf_02
+    2300004: tp_02_Leaf_03
+    2300006: tp_02_Leaf_04
+    2300008: tp_02_Leaf_05
+    2300010: tp_02_Leaf_06
+    2300012: tp_02_Leaf_07
+    2300014: tp_02_Leaf_08
+    2300016: tp_02_Leaf_09
+    2300018: tp_02_Leaf_10
+    2300020: tp_02_Leaf_11
+    2300022: tp_02_Leaf_12
+    2300024: tp_02_Leaf_13
+    2300026: tp_02_Leaf_14
+    2300028: tp_02_Leaf_15
+    2300030: tp_02_Leaf_16
+    2300032: tp_02_Leaf_17
+    2300034: tropicalPlant_02_Stems
+    3300000: tp_02_Leaf_01
+    3300002: tp_02_Leaf_02
+    3300004: tp_02_Leaf_03
+    3300006: tp_02_Leaf_04
+    3300008: tp_02_Leaf_05
+    3300010: tp_02_Leaf_06
+    3300012: tp_02_Leaf_07
+    3300014: tp_02_Leaf_08
+    3300016: tp_02_Leaf_09
+    3300018: tp_02_Leaf_10
+    3300020: tp_02_Leaf_11
+    3300022: tp_02_Leaf_12
+    3300024: tp_02_Leaf_13
+    3300026: tp_02_Leaf_14
+    3300028: tp_02_Leaf_15
+    3300030: tp_02_Leaf_16
+    3300032: tp_02_Leaf_17
+    3300034: tropicalPlant_02_Stems
+    4300000: tp_02_Leaf_01
+    4300002: tp_02_Leaf_02
+    4300004: tropicalPlant_02_Stems
+    4300006: tp_02_Leaf_17
+    4300008: tp_02_Leaf_05
+    4300010: tp_02_Leaf_06
+    4300012: tp_02_Leaf_07
+    4300014: tp_02_Leaf_16
+    4300016: tp_02_Leaf_09
+    4300018: tp_02_Leaf_10
+    4300020: tp_02_Leaf_11
+    4300022: tp_02_Leaf_15
+    4300024: tp_02_Leaf_13
+    4300026: tp_02_Leaf_14
+    4300028: tp_02_Leaf_08
+    4300030: tp_02_Leaf_04
+    4300032: tp_02_Leaf_03
+    4300034: tp_02_Leaf_12
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
