@@ -22,7 +22,7 @@ public class PlayVideo : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
 
-        Debug.Log(renderer.isVisible);
+        //Debug.Log(renderer.isVisible);
 
         if (!isPlayed && distance < 10)
         {
@@ -37,5 +37,8 @@ public class PlayVideo : MonoBehaviour
         else if(!isPlayed)
             GetComponent<MeshRenderer>().enabled = false;
 
+        //restart video
+        if (Input.GetKeyDown(KeyCode.Space))
+            videoPlayer.Play();
     }
 }
