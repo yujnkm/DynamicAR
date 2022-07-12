@@ -6,7 +6,8 @@ public class FlashSystemController : MonoBehaviour
 {
     public ParticleSystem vanishSystem;
     public Camera camera;
-    public GameObject target;
+    public GameObject targetObject;
+    public GameObject targetSwitch;
     public float setZ;
     public float timeInterval;
     public int maxParticles;
@@ -16,17 +17,21 @@ public class FlashSystemController : MonoBehaviour
 
     void Start()
     {
-        renderer = target.GetComponent<Renderer>();
+        targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        targetSwitch = GameObject.FindGameObjectWithTag("Target");
         time = 0f;
     }
 
     void Update()
     {
+        GameObject nextTarget = IndicatorSystemController.isDone ? targetSwitch : targetObject;
+        renderer = nextTarget.GetComponent<Renderer>();
         time += Time.deltaTime;
+        Debug.Log(renderer.isVisible);
         if (time > timeInterval && !renderer.isVisible)
         {
             time = 0f;
-            Vector3 screenPos = camera.WorldToScreenPoint(target.transform.position);
+            Vector3 screenPos = camera.WorldToScreenPoint(nextTarget.transform.position);
             if (screenPos.z > 0)
             {
                 screenPos.x = Mathf.Clamp(screenPos.x, 0, camera.pixelWidth);

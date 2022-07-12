@@ -22,6 +22,7 @@ public class CapController : MonoBehaviour
 
     void Update()
     {
+        particles = new ParticleSystem.Particle[maxParticles];
         numParticles = particleSystem.GetParticles(particles);
         for (int i = 0; i < numParticles; i++)
         {

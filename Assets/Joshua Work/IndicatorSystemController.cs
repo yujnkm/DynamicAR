@@ -6,10 +6,13 @@ public class IndicatorSystemController : MonoBehaviour
 {
     public ParticleSystem indicatorSystem;
     public ParticleSystem explosionSystem;
-    public GameObject target;
+    public GameObject targetObject;
+    public GameObject targetSwitch;
     public float driftSpeed;
     public float timeChange;
     public int explosionEmit;
+    
+    public static bool isDone;
 
     private float time = 0f;
     private int numParticles;
@@ -23,24 +26,28 @@ public class IndicatorSystemController : MonoBehaviour
         maxParticles = indicatorSystem.main.maxParticles;
         particles = new ParticleSystem.Particle[maxParticles];
         collisions = new List<ParticleCollisionEvent>();
+        isDone = false;
+        targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        targetSwitch = GameObject.FindGameObjectWithTag("Target");
     }
-
     void Update()
     {
         time += Time.deltaTime;
         if (time >= timeChange)
         {
+            particles = new ParticleSystem.Particle[maxParticles];
             numParticles = indicatorSystem.GetParticles(particles);
             time = 0f;
             for (int i = 0; i < numParticles; i++)
             {
-                Vector3 direction = (target.transform.position - particles[i].position).normalized;
+                GameObject nextTarget = isDone ? targetSwitch : targetObject;
+                Vector3 direction = (targetObject.transform.position - particles[i].position).normalized;
                 particles[i].velocity = direction * driftSpeed;
             }
             indicatorSystem.SetParticles(particles);
         }
     }
-    private int findParticleIndex(Vector3 position)
+    private int FindParticleIndex(Vector3 position)
     {
         float minDist = float.MaxValue;
         int closest = 0;
@@ -61,9 +68,10 @@ public class IndicatorSystemController : MonoBehaviour
         ParticlePhysicsExtensions.GetCollisionEvents(indicatorSystem, other, collisions);
         for (int i = 0; i < collisions.Count; i++)
         {
+            particles = new ParticleSystem.Particle[maxParticles];
             numParticles = indicatorSystem.GetParticles(particles);
-            int index = findParticleIndex(collisions[i].intersection);
-            particles[index].position = new Vector3(INFINITY, INFINITY, INFINITY);
+            int index = FindParticleIndex(collisions[i].intersection);
+            particles[index].remainingLifetime = 0f;
             indicatorSystem.SetParticles(particles);
             explosionSystem.transform.position = collisions[i].intersection;
             explosionSystem.transform.rotation = Quaternion.LookRotation(collisions[i].normal);
