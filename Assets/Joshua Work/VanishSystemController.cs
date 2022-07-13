@@ -21,7 +21,6 @@ public class VanishSystemController : MonoBehaviour
     void Start()
     {
         targetObject = GameObject.FindGameObjectWithTag("Dancer").transform.GetChild(0).gameObject;
-        targetSwitch = GameObject.FindGameObjectWithTag("Target");
         vanishSystem.Emit(1);
         time = 0f;
         alphaSet = 0f;
@@ -29,6 +28,10 @@ public class VanishSystemController : MonoBehaviour
 
     void Update()
     {
+        if (targetSwitch == null)
+        {
+            targetSwitch = GameObject.FindGameObjectWithTag("Target");
+        }
         nextTarget = IndicatorSystemController.isDone ? targetSwitch : targetObject;
         renderer = nextTarget.GetComponent<Renderer>();
         time += Time.deltaTime;

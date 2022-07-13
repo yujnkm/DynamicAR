@@ -28,10 +28,13 @@ public class IndicatorSystemController : MonoBehaviour
         collisions = new List<ParticleCollisionEvent>();
         isDone = false;
         targetObject = GameObject.FindGameObjectWithTag("Dancer");
-        targetSwitch = GameObject.FindGameObjectWithTag("Target");
     }
     void Update()
     {
+        if (targetSwitch == null)
+        {
+            targetSwitch = GameObject.FindGameObjectWithTag("Target");
+        }
         time += Time.deltaTime;
         if (time >= timeChange)
         {
@@ -41,7 +44,7 @@ public class IndicatorSystemController : MonoBehaviour
             for (int i = 0; i < numParticles; i++)
             {
                 GameObject nextTarget = isDone ? targetSwitch : targetObject;
-                Vector3 direction = (targetObject.transform.position - particles[i].position).normalized;
+                Vector3 direction = (nextTarget.transform.position - particles[i].position).normalized;
                 particles[i].velocity = direction * driftSpeed;
             }
             indicatorSystem.SetParticles(particles);

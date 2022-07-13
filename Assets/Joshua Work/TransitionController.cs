@@ -28,8 +28,7 @@ public class TransitionController : MonoBehaviour
         {
             timeIn += Time.deltaTime;
             Color color = image.color;
-            color.a = color.a - 1f / (timeToFade * 5) * Time.deltaTime;
-            Debug.Log(color.a);
+            color.a = color.a - 1f / timeToFade * Time.deltaTime;
             if (color.a < 0)
             {
                 color.a = 0;
