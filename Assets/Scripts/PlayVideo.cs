@@ -6,6 +6,7 @@ using UnityEngine.Video;
 public class PlayVideo : MonoBehaviour
 {
     public float timeToFade;
+    public float withinDist;
     public GameObject spiralSystem;
 
     private VideoPlayer videoPlayer;
@@ -30,16 +31,12 @@ public class PlayVideo : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.V) && !videoPlayer.isPlaying && isPlayed)
         {
+            Debug.Log("clicked");
             fadeIn = true;
-            isPlayed = true;
             StartCoroutine(PlayDancerVideo());
         }
-
-        Debug.Log(renderer.isVisible);
 
         if (fadeIn)
         {
@@ -66,11 +63,13 @@ public class PlayVideo : MonoBehaviour
             renderer.material.color = color;
         }
 
-        if (!isPlayed && distance < 10)
+        float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+
+        if (!isPlayed && distance < withinDist)
         {
             isPlayed = true;
-            StartCoroutine(PlayDancerVideo());
             fadeIn = true;
+            StartCoroutine(PlayDancerVideo());
         }
     }
     IEnumerator PlayDancerVideo()

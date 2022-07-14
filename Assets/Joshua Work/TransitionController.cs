@@ -40,7 +40,12 @@ public class TransitionController : MonoBehaviour
         {
             timeOut += Time.deltaTime;
             Color color = image.color;
-            color.a = Mathf.Max(color.a, color.a + 1f / timeToFade * Time.deltaTime);
+            color.a = color.a + 1f / timeToFade * Time.deltaTime;
+            if (color.a > 1)
+            {
+                color.a = 1;
+                fadeOut = false;
+            }
             image.color = color;
         }
     }
