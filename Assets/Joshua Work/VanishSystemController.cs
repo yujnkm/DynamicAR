@@ -8,22 +8,27 @@ public class VanishSystemController : MonoBehaviour
     public Camera camera;
     public GameObject targetObject;
     public GameObject targetSwitch;
+    public GameObject nextTarget;
     public float setZ;
     public float timeInterval;
+    public float fadeTime;
     public int maxParticles;
 
     private Renderer renderer;
     private float time;
     private ParticleSystem.Particle[] particles;
-    private GameObject nextTarget;
     private float alphaSet;
+    private bool fadeIn;
+    private bool fadeOut;
 
     void Start()
     {
-        targetObject = GameObject.FindGameObjectWithTag("Dancer").transform.GetChild(0).gameObject;
+        targetObject = GameObject.FindGameObjectWithTag("Dancer");
         vanishSystem.Emit(1);
         time = 0f;
         alphaSet = 0f;
+        fadeIn = false;
+        fadeOut = false;
     }
 
     void Update()
@@ -33,7 +38,7 @@ public class VanishSystemController : MonoBehaviour
             targetSwitch = GameObject.FindGameObjectWithTag("Target");
         }
         nextTarget = IndicatorSystemController.isDone ? targetSwitch : targetObject;
-        renderer = nextTarget.GetComponent<Renderer>();
+        renderer = nextTarget.transform.GetChild(0).GetComponent<Renderer>();
         time += Time.deltaTime;
 
         particles = new ParticleSystem.Particle[maxParticles];
@@ -56,17 +61,37 @@ public class VanishSystemController : MonoBehaviour
         var globalShow = shouldShow && timerShouldShow;
         if (globalShow)
         {
-            alphaSet = Mathf.Clamp(alphaSet + Time.deltaTime, 0, 1);
+            fadeOut = false;
+            fadeIn = true;
         }
         else
         {
-            alphaSet = Mathf.Clamp(alphaSet - Time.deltaTime, 0, 1);
+            fadeOut = true;
+            fadeIn = false;
+        }
+        if (fadeIn)
+        {
+            alphaSet = alphaSet + 1f / fadeTime * Time.deltaTime;
+            if (alphaSet > 1)
+            {
+                alphaSet = 1;
+                fadeIn = false;
+            }
+        }
+        if (fadeOut)
+        {
+            alphaSet = alphaSet - 1f / fadeTime * Time.deltaTime;
+            if (alphaSet < 0)
+            {
+                alphaSet = 0;
+                fadeOut = false;
+            }
         }
         var color = particles[0].startColor;
         color.a = (byte) (alphaSet * 255);
         particles[0].startColor = color;
 
-        vanishSystem.SetParticles(particles, 1);
+        vanishSystem.SetParticles(particles);
     }
 
     private Vector3 GetScreenPos()
@@ -109,15 +134,15 @@ public class VanishSystemController : MonoBehaviour
         {
             particle.rotation = 180;
         }
-        if (Within(screenPos.y, camera.pixelHeight, 5))
+        else if (Within(screenPos.y, camera.pixelHeight, 5))
         {
             particle.rotation = 0;
         }
-        if (Within(screenPos.x, 0, 5))
+        else if (Within(screenPos.x, 0, 5))
         {
             particle.rotation = 270;
         }
-        if (Within(screenPos.x, camera.pixelWidth, 5))
+        else if (Within(screenPos.x, camera.pixelWidth, 5))
         {
             particle.rotation = 90;
         }
@@ -126,7 +151,8 @@ public class VanishSystemController : MonoBehaviour
 
     private bool ShouldShow()
     {
-        if(nextTarget.GetComponent<Renderer>().isVisible)
+        if ((nextTarget.tag == "Target" && nextTarget.GetComponent<Renderer>().isVisible) || 
+            (nextTarget.tag == "Dancer" && nextTarget.transform.GetChild(0).GetComponent<Renderer>().isVisible))
         {
             return false;
         }
@@ -135,9 +161,17 @@ public class VanishSystemController : MonoBehaviour
 
     private bool TimerShouldShow()
     {
-        int quo = (int)(time / timeInterval);
-        if (quo % 2 == 0) return true;
+        if (time > timeInterval)
+        {
+            StartCoroutine(waitTime());
+            return true;
+        }
         return false;
+    }
+    IEnumerator waitTime()
+    {
+        yield return new WaitForSeconds(timeInterval);
+        time = 0;
     }
 
     private bool Within(float a, float b, float t)
