@@ -44,6 +44,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Joshua Work/Scene 3 Nature.unity
     guid: c20cb9e7f96dd7e4a8c61e21a81de411
+  - enabled: 1
+    path: Assets/Joshua Work/Mini Scene 1 Space.unity
+    guid: 42a0c6d4059bd234a8671d6533fb0c27
+  - enabled: 1
+    path: Assets/Joshua Work/Mini Scene 2 Urban.unity
+    guid: f4daef4989b9c264ba2bffa386a541c3
+  - enabled: 1
+    path: Assets/Joshua Work/Mini Scene 3 Nature.unity
+    guid: 323feeafa8a44d744858a3797eccb302
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Transition.unity
+    guid: f7cadc24ef9eb1148a503bb88d64d616
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Nature Neither.unity
+    guid: dde01348e63e8654dbb9ca25805ee9ce
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Space Arrow.unity
+    guid: 25a87c9b28afec14bbcc9bb1f4ebf544
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Space Particle.unity
+    guid: 669d7a9b72718fc4aac28233cf859809
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Urban Arrow.unity
+    guid: 1a756becce9fffc4eb8657dda69f68d0
+  - enabled: 1
+    path: Assets/Joshua Work/Final Scenes/Urban Particle.unity
+    guid: 056823689c6372645bd476d1c9cfa538
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 30073e69b36240b4197e1f6b0ec83538, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 64495e76dbcd14440949dd5753499c06, type: 2}
