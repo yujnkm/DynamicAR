@@ -37,7 +37,7 @@ public class VanishSystemController : MonoBehaviour
         {
             targetSwitch = GameObject.FindGameObjectWithTag("Target");
         }
-        nextTarget = IndicatorSystemController.isDone ? targetSwitch : targetObject;
+        nextTarget = GameObject.FindObjectOfType<IndicatorSystemController>().isDone ? targetSwitch : targetObject;
         renderer = nextTarget.transform.GetChild(0).GetComponent<Renderer>();
         time += Time.deltaTime;
 

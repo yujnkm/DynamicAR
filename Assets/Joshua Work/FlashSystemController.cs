@@ -24,7 +24,7 @@ public class FlashSystemController : MonoBehaviour
 
     void Update()
     {
-        GameObject nextTarget = IndicatorSystemController.isDone ? targetSwitch : targetObject;
+        GameObject nextTarget = GameObject.FindObjectOfType<IndicatorSystemController>().isDone ? targetSwitch : targetObject;
         renderer = nextTarget.GetComponent<Renderer>();
         time += Time.deltaTime;
         Debug.Log(renderer.isVisible);

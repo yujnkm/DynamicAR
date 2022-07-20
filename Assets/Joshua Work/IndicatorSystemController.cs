@@ -11,8 +11,7 @@ public class IndicatorSystemController : MonoBehaviour
     public float driftSpeed;
     public float timeChange;
     public int explosionEmit;
-    
-    public static bool isDone;
+    public bool isDone;
 
     private float time = 0f;
     private int numParticles;

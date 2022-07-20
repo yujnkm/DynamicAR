@@ -90,7 +90,7 @@ public class PlayVideo : MonoBehaviour
         {
             spiralSystem.SetActive(true);
             spiralSystem.GetComponent<ParticleSystem>().Play();
-            IndicatorSystemController.isDone = true;
+            GameObject.FindObjectOfType<IndicatorSystemController>().isDone = true;
         }
     }
 }
