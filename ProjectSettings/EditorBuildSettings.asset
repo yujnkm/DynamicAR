@@ -29,28 +29,28 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WLT_tutorial.unity
     guid: 2b75734d721a8874ca6d71e43fb2fb60
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Joshua Scene.unity
     guid: af59ac58c68435c40a83da695615667f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Joshua Scene 1.unity
     guid: f06735a13a9a4d148bb8bef4bef9eb37
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Scene 1 Space.unity
     guid: 872a910147388994589ba149a0958e05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Scene 2 Urban.unity
     guid: 6a0776e429046774c941b77c59cfdf07
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Scene 3 Nature.unity
     guid: c20cb9e7f96dd7e4a8c61e21a81de411
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Mini Scene 1 Space.unity
     guid: 42a0c6d4059bd234a8671d6533fb0c27
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Mini Scene 2 Urban.unity
     guid: f4daef4989b9c264ba2bffa386a541c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Mini Scene 3 Nature.unity
     guid: 323feeafa8a44d744858a3797eccb302
   - enabled: 1
