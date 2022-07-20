@@ -34,24 +34,33 @@ public class SwitchController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered");
-        ready = true;
+        if (other.gameObject.tag == "MainCamera")
+        {
+            Debug.Log("Entered");
+            ready = true;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
         Debug.Log(time);
-        if (time > timeToTeleport)
+        if (other.gameObject.tag == "MainCamera")
         {
-            time = 0f;
-            ready = false;
-            StartCoroutine(PlayWormhole());
+            if (time > timeToTeleport)
+            {
+                time = 0f;
+                ready = false;
+                StartCoroutine(PlayWormhole());
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Exited");
-        time = 0f;
-        ready = false;
+        if (other.gameObject.tag == "MainCamera")
+        {
+            time = 0f;
+            ready = false;
+        }
     }
     IEnumerator PlayWormhole()
     {

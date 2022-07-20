@@ -28,7 +28,13 @@ public class ArrowController : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(arrowLocation.transform.position.x, transform.position.y, arrowLocation.transform.position.z);
-        targetObject = vanishSystemController.nextTarget;
+        //targetObject = vanishSystemController.nextTarget;
+        PlayVideo playVideoComponent = GameObject.FindObjectOfType<PlayVideo>();
+        targetObject = playVideoComponent.getParent();
+        if (playVideoComponent.getIsPlayed() && !targetObject.transform.GetChild(0).GetComponent<VideoPlayer>().isPlaying)
+        {
+            targetObject = GameObject.FindGameObjectWithTag("Target");
+        }
         Vector3 targetPosition = new Vector3(targetObject.transform.position.x, transform.position.y, targetObject.transform.position.z);
         Vector3 direction = (targetPosition - transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);

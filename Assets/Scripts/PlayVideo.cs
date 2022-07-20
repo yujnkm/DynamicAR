@@ -72,6 +72,14 @@ public class PlayVideo : MonoBehaviour
             StartCoroutine(PlayDancerVideo());
         }
     }
+    public bool getIsPlayed()
+    {
+        return isPlayed;
+    }
+    public GameObject getParent()
+    {
+        return this.transform.parent.gameObject;
+    }
     IEnumerator PlayDancerVideo()
     {
         videoPlayer.Play();
