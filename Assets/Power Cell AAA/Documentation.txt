@@ -1,0 +1,16 @@
+Hi guys,
+
+Here the guideline for the asset architecture:
+/Demo/ - demo scene 
+/Lights/ - lights
+/Materials/ - materials for all prefabs
+/Meshes/ - all meshes
+/Prefabs/ - all prefabs
+/Textures/ - textures for all prefabs
+
+All models are lowpoly with the quality of AAA highpolies, gameready.
+All textures are 2048x2048 and include albedo, specular and normals.
+
+Regards, 
+Black Cloud Studio.
+mrnixon@afterreset.com
