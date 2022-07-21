@@ -20,7 +20,7 @@ VideoClipImporter:
       aspectRatio: 0
       customWidth: 1920
       customHeight: 1080
-      bitrateMode: 2
+      bitrateMode: 0
       spatialQuality: 2
   userData: 
   assetBundleName: 
