@@ -11,17 +11,17 @@ public class SwitchController : MonoBehaviour
     public float timeToTeleport;
     public string nextScene;
     public float sceneLoad;
-    public Canvas canvas;
+    //public Canvas canvas;
 
     private float time;
     private bool ready;
-    private TransitionController transitionController;
+    //private TransitionController transitionController;
     
     void Start()
     {
         time = 0f;
         ready = false;
-        transitionController = canvas.GetComponent<TransitionController>();
+        //transitionController = canvas.GetComponent<TransitionController>();
         spiralSystem.Play();
     }
 
@@ -49,7 +49,8 @@ public class SwitchController : MonoBehaviour
             {
                 time = 0f;
                 ready = false;
-                StartCoroutine(PlayWormhole());
+                GameObject.FindObjectOfType<TutorialController>().Next();
+                //StartCoroutine(PlayWormhole());
             }
         }
     }
@@ -62,12 +63,12 @@ public class SwitchController : MonoBehaviour
             ready = false;
         }
     }
-    IEnumerator PlayWormhole()
+/*    IEnumerator PlayWormhole()
     {
         wormholeSystem.Play();
         transitionController.fadeOut = true;
         yield return new WaitForSeconds(sceneLoad);
         Debug.Log("testing");
         SceneManager.LoadScene(nextScene);
-    }
+    }*/
 }

@@ -17,12 +17,13 @@ public class ArrowController : MonoBehaviour
     private bool fadeOut;
     private Renderer renderer;
 
-    void Start()
+    void OnEnable()
     {
         vanishSystemController = GameObject.FindObjectOfType<VanishSystemController>();
         fadeIn = false;
         fadeOut = false;
         renderer = transform.GetChild(0).GetComponent<Renderer>();
+        targetObject = null;
     }
 
     void Update()
