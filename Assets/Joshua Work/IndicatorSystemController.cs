@@ -20,16 +20,21 @@ public class IndicatorSystemController : MonoBehaviour
     private int maxParticles;
     private int INFINITY = 1_000_000;
 
-    void Start()
+    void OnEnable()
     {
         maxParticles = indicatorSystem.main.maxParticles;
         particles = new ParticleSystem.Particle[maxParticles];
         collisions = new List<ParticleCollisionEvent>();
         isDone = false;
-        targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        targetObject = null;
+        targetSwitch = null;
     }
     void Update()
     {
+        if (targetObject == null)
+        {
+            targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        }
         if (targetSwitch == null)
         {
             targetSwitch = GameObject.FindGameObjectWithTag("Target");

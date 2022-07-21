@@ -6,14 +6,16 @@ public class KeyToAdvance : MonoBehaviour
 {
     public KeyCode key;
     public float timer;
+    public int jumpScene;
+
     private float t;
-    // Start is called before the first frame update
+    private TutorialClip tutorialClip;
+
     void Start()
     {
-        
+        tutorialClip = GetComponent<TutorialClip>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         t += Time.deltaTime;
@@ -22,7 +24,18 @@ public class KeyToAdvance : MonoBehaviour
         {
             if (Input.GetKeyDown(key))
             {
-                gameObject.SendMessage("Done");
+                if (key == KeyCode.P || key == KeyCode.N)
+                {
+                    tutorialClip.Done();
+                }
+                else if (key == KeyCode.A)
+                {
+                    tutorialClip.JumpTo();
+                }
+                else if (key == KeyCode.B)
+                {
+                    tutorialClip.MoveBack();
+                }
             }
         }
     }

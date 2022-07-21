@@ -94629,7 +94629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076189232}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Space Particle Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99825,6 +99825,7 @@ MonoBehaviour:
   driftSpeed: 2
   timeChange: 1
   explosionEmit: 6
+  isDone: 0
 --- !u!1001 &2125029310
 PrefabInstance:
   m_ObjectHideFlags: 0

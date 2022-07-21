@@ -17,10 +17,13 @@ public class PlayVideo : MonoBehaviour
     private float timeOut;
     private Renderer renderer;
 
-    void Start()
+    void OnEnable()
     {
         videoPlayer = GetComponent<VideoPlayer>();
         renderer = GetComponent<Renderer>();
+        Color color = renderer.material.color;
+        color.a = 0f;
+        renderer.material.color = color;
         isPlayed = false;
         fadeIn = false;
         timeIn = 0f;
@@ -43,6 +46,7 @@ public class PlayVideo : MonoBehaviour
             timeIn += Time.deltaTime;
             Color color = renderer.material.color;
             color.a = color.a + 1f / timeToFade * Time.deltaTime;
+            //color.a = color.a + 1f;
             if (color.a > 1)
             {
                 color.a = 1;
@@ -55,6 +59,7 @@ public class PlayVideo : MonoBehaviour
             timeIn += Time.deltaTime;
             Color color = renderer.material.color;
             color.a = color.a - 1f / timeToFade * Time.deltaTime;
+            //color.a = color.a - 1f;
             if (color.a < 0)
             {
                 color.a = 0;
@@ -82,6 +87,7 @@ public class PlayVideo : MonoBehaviour
     }
     IEnumerator PlayDancerVideo()
     {
+        Debug.Log("awakning spiral");
         videoPlayer.Play();
         yield return new WaitForSeconds((float) videoPlayer.length - timeToFade);
         fadeOut = true;

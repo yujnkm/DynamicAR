@@ -21,18 +21,24 @@ public class VanishSystemController : MonoBehaviour
     private bool fadeIn;
     private bool fadeOut;
 
-    void Start()
+    void OnEnable()
     {
-        targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        Debug.Log("emit vanish");
         vanishSystem.Emit(1);
         time = 0f;
         alphaSet = 0f;
         fadeIn = false;
         fadeOut = false;
+        targetObject = null;
+        targetSwitch = null;
     }
 
     void Update()
     {
+        if (targetObject == null)
+        {
+            targetObject = GameObject.FindGameObjectWithTag("Dancer");
+        }
         if (targetSwitch == null)
         {
             targetSwitch = GameObject.FindGameObjectWithTag("Target");

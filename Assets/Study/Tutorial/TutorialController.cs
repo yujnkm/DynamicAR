@@ -11,6 +11,11 @@ public class TutorialController : MonoBehaviour
     public int currentClip = 0;
     public TMPro.TextMeshProUGUI text;
     public string sessionName;
+    public int jumpIndex;
+    public GameObject indicatorSystem;
+    public GameObject vanishSystem;
+
+    private Stack<int> previousIndexes = new Stack<int>();
 
     public void RestartTutorial()
     {
@@ -35,6 +40,29 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentClip == 1 || currentClip == 9)
+        {
+            if (!indicatorSystem.activeSelf)
+            {
+                indicatorSystem.SetActive(true);
+                vanishSystem.SetActive(true);
+            }
+            Debug.Log(indicatorSystem.GetComponent<ParticleSystem>().isPlaying);
+            if (!indicatorSystem.GetComponent<ParticleSystem>().isPlaying)
+            {
+                indicatorSystem.GetComponent<ParticleSystem>().Play();
+            }
+            if (!vanishSystem.GetComponent<ParticleSystem>().isPlaying)
+            {
+                vanishSystem.GetComponent<ParticleSystem>().Play();
+            }
+        }
+        else
+        {
+            indicatorSystem.SetActive(false);
+            vanishSystem.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Previous();
@@ -63,20 +91,31 @@ public class TutorialController : MonoBehaviour
 
     public void Next()
     {
-        if (currentClip < clips.Length-1)
+        if (currentClip < clips.Length - 1)
         {
+            previousIndexes.Push(currentClip);
             currentClip++;
+            if (currentClip == jumpIndex)
+            {
+                currentClip = clips.Length - 1;
+            }
             LoadClip(currentClip);
         }
+    }
+    public void JumpScene()
+    {
+        previousIndexes.Push(currentClip);
+        currentClip = jumpIndex;
+        LoadClip(currentClip);
     }
 
     public void Previous()
     {
-        if (currentClip >0)
+        if (previousIndexes.Count > 0)
         {
-            currentClip--;
-            LoadClip(currentClip);
+            currentClip = previousIndexes.Pop();
         }
+        LoadClip(currentClip);
     }
 
     public void LoadClip(int index)

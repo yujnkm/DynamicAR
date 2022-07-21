@@ -16103,7 +16103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 287309106}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: Urban Particle Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106663,6 +106663,7 @@ MonoBehaviour:
   driftSpeed: 2
   timeChange: 1
   explosionEmit: 6
+  isDone: 0
 --- !u!1 &3895632803796678
 GameObject:
   m_ObjectHideFlags: 0

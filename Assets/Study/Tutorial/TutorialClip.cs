@@ -113,7 +113,15 @@ public class TutorialClip : MonoBehaviour
             controller.Next();
         }        
     }
-
-
-
+    public void JumpTo()
+    {
+        if (gameObject.activeSelf)
+        {
+            controller.JumpScene();
+        }
+    }
+    public void MoveBack()
+    {
+        controller.Previous();
+    }
 }
