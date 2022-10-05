@@ -15,6 +15,9 @@ public class FireworkSystemController : MonoBehaviour
     }
     void Update()
     {
+        /*
+         * chooses a random firework with a random color to emit after a certain amount of time
+         */
         time += Time.deltaTime;
         if (time > timeInterval)
         {

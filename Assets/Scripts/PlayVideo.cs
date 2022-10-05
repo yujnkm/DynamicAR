@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+/*
+ * PlayVideo is for the main dancer footage
+ * Different from PlayDisplayVideo, which is only for the 2 secondary footages
+ */
 public class PlayVideo : MonoBehaviour
 {
     public float timeToFade;
@@ -29,11 +33,20 @@ public class PlayVideo : MonoBehaviour
         timeIn = 0f;
         fadeOut = false;
         timeOut = 0f;
+        /*
+         * spiral is deactivated to not confuse the user
+         * will be activated once the user finishes watching the main dancer footage (located at the end of the hall)
+         */
         spiralSystem.SetActive(false);
     }
 
     void Update()
     {
+        /*
+         * Not used in study
+         * Initially designed to allow user to manually play the dancer video,
+         * but users did not have remote to do so
+         */
         if (Input.GetKeyDown(KeyCode.V) && !videoPlayer.isPlaying && isPlayed)
         {
             Debug.Log("clicked");
@@ -41,6 +54,7 @@ public class PlayVideo : MonoBehaviour
             StartCoroutine(PlayDancerVideo());
         }
 
+        //fades in and out the dancer video when appropriate
         if (fadeIn)
         {
             timeIn += Time.deltaTime;
@@ -70,6 +84,9 @@ public class PlayVideo : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
 
+        /*
+         * plays video when user is a certain distance away from the dancers
+         */
         if (!isPlayed && distance < withinDist)
         {
             isPlayed = true;
@@ -85,6 +102,12 @@ public class PlayVideo : MonoBehaviour
     {
         return this.transform.parent.gameObject;
     }
+    /*
+     * Fades in the dancer video and then plays it
+     * Once the video is done playing, the spiral system will activate,
+     * and it has a collider that will allow users to jump to an empty scene,
+     * where they will fill out the survey before moving on to the next scene
+     */
     IEnumerator PlayDancerVideo()
     {
         Debug.Log("awakning spiral");

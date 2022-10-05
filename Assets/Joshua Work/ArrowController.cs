@@ -36,15 +36,25 @@ public class ArrowController : MonoBehaviour
         {
             targetObject = GameObject.FindGameObjectWithTag("Target");
         }
+        /*
+         * Finds position of the target and rotate towards it
+         */
         Vector3 targetPosition = new Vector3(targetObject.transform.position.x, transform.position.y, targetObject.transform.position.z);
         Vector3 direction = (targetPosition - transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
 
+        /*
+         * Arrow oscillates back and forth (just a visual effect)
+         */
         Vector3 position = transform.position;
         position += transform.forward * Mathf.Sin(frequency * Time.time) * amplitude;
         transform.position = position;
 
+        /*
+         * Arrow disappears when the main dancer video is playing
+         * Only appears when dancers are not playing or when dancers are done playing
+         */
         if (targetObject.tag == "Dancer" && targetObject.transform.GetChild(0).GetComponent<VideoPlayer>().isPlaying)
         {
             fadeOut = true;

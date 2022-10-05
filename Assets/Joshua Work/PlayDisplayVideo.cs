@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+/*
+ * different from playVideo
+ * PlayDisplayVideo is for the 2 secondary dancer videos that
+ * do not activate the spiral system
+ * while playVideo is for the main dancer screen
+ */
 public class PlayDisplayVideo : MonoBehaviour
 {
     public float timeToFade;
@@ -32,6 +38,9 @@ public class PlayDisplayVideo : MonoBehaviour
 
     void Update()
     {
+        /*
+         * fades video in and out when they play
+         */
         if (fadeIn)
         {
             timeIn += Time.deltaTime;
@@ -60,7 +69,9 @@ public class PlayDisplayVideo : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-
+        /*
+         * plays video when user is a certain distance away from the dancers
+         */
         if (!isPlayed && distance < withinDist)
         {
             isPlayed = true;
