@@ -33,11 +33,11 @@ public class IndicatorSystemController : MonoBehaviour
     {
         if (targetObject == null)
         {
-            targetObject = GameObject.FindGameObjectWithTag("Dancer");
+            targetObject = GameObject.FindGameObjectWithTag("Dancer"); //finds the dancer object
         }
         if (targetSwitch == null)
         {
-            targetSwitch = GameObject.FindGameObjectWithTag("Target");
+            targetSwitch = GameObject.FindGameObjectWithTag("Target"); //finds the spiral object
         }
         time += Time.deltaTime;
         if (time >= timeChange)
@@ -47,13 +47,24 @@ public class IndicatorSystemController : MonoBehaviour
             time = 0f;
             for (int i = 0; i < numParticles; i++)
             {
+                /*
+                 * if the dancer video did not play or is not done playing, the indicators will go to the dancers.
+                 * if the dancer video is completed, then the indicators will go to the spiral to prompt users to move to next scene
+                 */
                 GameObject nextTarget = isDone ? targetSwitch : targetObject;
                 Vector3 direction = (nextTarget.transform.position - particles[i].position).normalized;
+                /*
+                 * propels particles in correct direction of dancer
+                 * necessary since particles have a randomizing effect on their velocity
+                 */
                 particles[i].velocity = direction * driftSpeed;
             }
             indicatorSystem.SetParticles(particles);
         }
     }
+    /*
+     * finds which particle is closest to a given position
+     */
     private int FindParticleIndex(Vector3 position)
     {
         float minDist = float.MaxValue;
@@ -70,16 +81,19 @@ public class IndicatorSystemController : MonoBehaviour
         }
         return closest;
     }
-    private void OnParticleCollision(GameObject other)
+    private void OnParticleCollision(GameObject other) //when particles collide with the dancer screen
     {
         ParticlePhysicsExtensions.GetCollisionEvents(indicatorSystem, other, collisions);
         for (int i = 0; i < collisions.Count; i++)
         {
             particles = new ParticleSystem.Particle[maxParticles];
             numParticles = indicatorSystem.GetParticles(particles);
-            int index = FindParticleIndex(collisions[i].intersection);
-            particles[index].remainingLifetime = 0f;
+            int index = FindParticleIndex(collisions[i].intersection); //find out which particle is the one that collided
+            particles[index].remainingLifetime = 0f; //destroys the particle
             indicatorSystem.SetParticles(particles);
+            /*
+             * plays a small explosion effect when particles reach the dancer object
+             */
             explosionSystem.transform.position = collisions[i].intersection;
             explosionSystem.transform.rotation = Quaternion.LookRotation(collisions[i].normal);
             explosionSystem.Play();
