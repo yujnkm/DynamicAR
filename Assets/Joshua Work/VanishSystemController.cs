@@ -147,7 +147,7 @@ public class VanishSystemController : MonoBehaviour
     private void moveParticle(Vector3 screenPos)
     {
         vanishSystem.transform.position = camera.ScreenToWorldPoint(screenPos);
-        Debug.Log(screenPos);
+        //Debug.Log(screenPos);
     }
     /*
      * the vanish system uses a trapezoidal particle
@@ -171,6 +171,7 @@ public class VanishSystemController : MonoBehaviour
         {
             particle.rotation = 90;
         }
+        Debug.Log(particle.rotation);
         return particle;
     }
     /*
