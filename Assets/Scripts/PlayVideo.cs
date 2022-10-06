@@ -20,11 +20,15 @@ public class PlayVideo : MonoBehaviour
     private bool fadeOut;
     private float timeOut;
     private Renderer renderer;
+    private GameObject videoControl;
+    private GameObject[] positionControls;
 
     void OnEnable()
     {
         videoPlayer = GetComponent<VideoPlayer>();
         renderer = GetComponent<Renderer>();
+        videoControl = GameObject.FindGameObjectWithTag("PositionController");
+        findPlayPoints();
         Color color = renderer.material.color;
         color.a = 0f;
         renderer.material.color = color;
@@ -87,12 +91,32 @@ public class PlayVideo : MonoBehaviour
         /*
          * plays video when user is a certain distance away from the dancers
          */
-        if (!isPlayed && distance < withinDist)
+        if (!isPlayed && checkPlay())
         {
             isPlayed = true;
             fadeIn = true;
             StartCoroutine(PlayDancerVideo());
         }
+    }
+    private void findPlayPoints()
+    {
+        positionControls = new GameObject[videoControl.transform.childCount];
+        for (int i = 0; i < positionControls.Length; i++)
+        {
+            positionControls[i] = videoControl.transform.GetChild(i).gameObject;
+        }
+    }
+    public bool checkPlay()
+    {
+        foreach (GameObject position in positionControls)
+        {
+            PlayVideoController videoController = position.GetComponent<PlayVideoController>();
+            if (videoController.dancer == this.gameObject)
+            {
+                return videoController.getStatus();
+            }
+        }
+        return false;
     }
     public bool getIsPlayed()
     {
@@ -110,12 +134,11 @@ public class PlayVideo : MonoBehaviour
      */
     IEnumerator PlayDancerVideo()
     {
-        Debug.Log("awakning spiral");
         videoPlayer.Play();
         yield return new WaitForSeconds((float) videoPlayer.length - timeToFade);
         fadeOut = true;
         yield return new WaitForSeconds(timeToFade);
-        if (!spiralSystem.activeSelf)
+        if (!spiralSystem.activeSelf && this.gameObject.tag == "MainDance")
         {
             spiralSystem.SetActive(true);
             spiralSystem.GetComponent<ParticleSystem>().Play();

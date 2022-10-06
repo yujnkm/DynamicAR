@@ -53,7 +53,7 @@ public class SwitchController : MonoBehaviour
          * Thus, the next key from the tutorial script will automatically be played
          * to switch to the next scene.
          */
-        Debug.Log(time);
+        //Debug.Log(time);
         if (other.gameObject.tag == "MainCamera")
         {
             if (time > timeToTeleport)
