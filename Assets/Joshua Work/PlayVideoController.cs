@@ -7,6 +7,10 @@ public class PlayVideoController : MonoBehaviour
     public GameObject dancer;
     private bool isReady = false;
 
+    private void OnEnable()
+    {
+        isReady = false;
+    }
     private void Update()
     {
         Debug.Log("Working");

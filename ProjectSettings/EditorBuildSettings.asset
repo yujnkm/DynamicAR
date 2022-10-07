@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/WLT_tutorial.unity
     guid: 2b75734d721a8874ca6d71e43fb2fb60
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Joshua Scene.unity
     guid: af59ac58c68435c40a83da695615667f
   - enabled: 0
@@ -53,22 +53,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Joshua Work/Mini Scene 3 Nature.unity
     guid: 323feeafa8a44d744858a3797eccb302
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Transition.unity
     guid: f7cadc24ef9eb1148a503bb88d64d616
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Nature Neither.unity
     guid: dde01348e63e8654dbb9ca25805ee9ce
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Space Arrow.unity
     guid: 25a87c9b28afec14bbcc9bb1f4ebf544
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Space Particle.unity
     guid: 669d7a9b72718fc4aac28233cf859809
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Urban Arrow.unity
     guid: 1a756becce9fffc4eb8657dda69f68d0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Joshua Work/Final Scenes/Urban Particle.unity
     guid: 056823689c6372645bd476d1c9cfa538
   m_configObjects:

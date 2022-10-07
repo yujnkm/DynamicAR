@@ -30,7 +30,7 @@ public class ArrowController : MonoBehaviour
     {
         transform.position = new Vector3(arrowLocation.transform.position.x, transform.position.y, arrowLocation.transform.position.z);
         //targetObject = vanishSystemController.nextTarget;
-        PlayVideo playVideoComponent = GameObject.FindObjectOfType<PlayVideo>();
+        PlayVideo playVideoComponent = GameObject.FindGameObjectWithTag("MainDance").GetComponent<PlayVideo>();
         targetObject = playVideoComponent.getParent();
         if (playVideoComponent.getIsPlayed() && !targetObject.transform.GetChild(0).GetComponent<VideoPlayer>().isPlaying)
         {
