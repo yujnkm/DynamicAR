@@ -12,7 +12,7 @@ Material:
   m_ShaderKeywords: _COLOR2ENABLE_ON _COLOR2ON_ON _COLOR2OVERLAYTYPE2_UV_BASED _COLOR2OVERLAYTYPE_UV_BASED
     _COLOR2TYPE_VERTICALGRADIENT _FIXTHEBASEOFFOLIAGE2_ON _FIXTHEBASEOFFOLIAGE_ON
     _HIGHLIGHTWIND_ON _KEYWORD0_ON _SNOWOVERLAYTYPE2_WORLD_NORMAL_BASED _SNOWOVERLAYTYPE_UV_BASED
-    _TREETYPE_BROADLEAF _WIND2_ON _WIND_ON
+    _TREETYPE_BROADLEAF _WIND2_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -170,7 +170,7 @@ Material:
     - _TranslucencyInt: 2
     - _TreeType: 0
     - _UVSec: 0
-    - _WIND: 1
+    - _WIND: 0
     - _WIND2: 1
     - _Wind: 1
     - _Wind1: 1
@@ -193,3 +193,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

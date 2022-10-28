@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: AN_Bush_Flowers
   m_Shader: {fileID: 4800000, guid: 0154318cd2c5a3747a66420b5d885dd5, type: 3}
-  m_ShaderKeywords: _TREETYPE_BUSH _WIND_ON
+  m_ShaderKeywords: _TREETYPE_BUSH
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -134,7 +134,7 @@ Material:
     - _TranslucencyInt: 5
     - _TreeType: 2
     - _UVSec: 0
-    - _WIND: 1
+    - _WIND: 0
     - _Wind: 1
     - _WindForce: 0.13
     - _WindSpeed: 0.15
@@ -148,3 +148,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowColor: {r: 1, g: 0.7400185, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
