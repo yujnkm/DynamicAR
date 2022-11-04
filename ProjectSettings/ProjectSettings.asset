@@ -608,7 +608,10 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    14: master
+    1: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: master;MOBILE_INPUT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -630,7 +633,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: WorldLockingKirbyCrossing
   metroPackageVersion: 1.2.1.0
-  metroCertificatePath: C:\Users\yujnkm\repo\Git_DynamicAR\DynamicAR\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
