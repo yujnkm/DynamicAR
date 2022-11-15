@@ -146,6 +146,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: -8093345423106647632, guid: 64495e76dbcd14440949dd5753499c06, type: 2}
   - {fileID: 8201382739287467125, guid: 30073e69b36240b4197e1f6b0ec83538, type: 2}
   metroInputSource: 0
@@ -603,7 +608,10 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    14: master
+    1: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: master;MOBILE_INPUT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -624,7 +632,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: WorldLockingKirbyCrossing
-  metroPackageVersion: 1.0.1.0
+  metroPackageVersion: 1.2.1.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany

@@ -57,6 +57,7 @@ public class ArrowController : MonoBehaviour
          */
         if (targetObject.tag == "Dancer" && targetObject.transform.GetChild(0).GetComponent<VideoPlayer>().isPlaying)
         {
+            Debug.Log("Dancer is playing");
             fadeOut = true;
         }
         else
@@ -79,6 +80,7 @@ public class ArrowController : MonoBehaviour
         {
             Color color = renderer.material.color;
             color.a = color.a - 1f / fadeTime * Time.deltaTime;
+            Debug.Log(color.a);
             if (color.a < 0)
             {
                 color.a = 0;

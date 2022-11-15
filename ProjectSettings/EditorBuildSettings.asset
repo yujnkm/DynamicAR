@@ -53,24 +53,30 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Joshua Work/Mini Scene 3 Nature.unity
     guid: 323feeafa8a44d744858a3797eccb302
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Transition.unity
     guid: f7cadc24ef9eb1148a503bb88d64d616
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Nature Neither.unity
     guid: dde01348e63e8654dbb9ca25805ee9ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Space Arrow.unity
     guid: 25a87c9b28afec14bbcc9bb1f4ebf544
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Space Particle.unity
     guid: 669d7a9b72718fc4aac28233cf859809
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Urban Arrow.unity
     guid: 1a756becce9fffc4eb8657dda69f68d0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Joshua Work/Final Scenes/Urban Particle.unity
     guid: 056823689c6372645bd476d1c9cfa538
+  - enabled: 0
+    path: Assets/Joshua Work/Final Scenes/IEEE_VR_build.unity
+    guid: 910607ffbc5a31547aee70537a95af78
+  - enabled: 1
+    path: Assets/IEEE VR low quality.unity
+    guid: fd8f5c7328a56d54488e2dd5d464ccaf
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 30073e69b36240b4197e1f6b0ec83538, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 64495e76dbcd14440949dd5753499c06, type: 2}
