@@ -24,6 +24,7 @@ public class FlashSystemController : MonoBehaviour
 
     void Update()
     {
+        /*
         GameObject nextTarget = GameObject.FindObjectOfType<IndicatorSystemController>().isDone ? targetSwitch : targetObject;
         renderer = nextTarget.GetComponent<Renderer>();
         time += Time.deltaTime;
@@ -52,5 +53,6 @@ public class FlashSystemController : MonoBehaviour
             vanishSystem.transform.position = camera.ScreenToWorldPoint(screenPos);
             vanishSystem.Emit(1);
         }
+        */
     }
 }

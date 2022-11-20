@@ -12,10 +12,28 @@ public class TutorialController : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
     public string sessionName;
     public int jumpIndex;
-    public GameObject indicatorSystem;
-    public GameObject vanishSystem;
+    public List<int> particleScenes;
+    public List<int> arrowScenes;
+    public GameObject spiralSystem;
 
     private Stack<int> previousIndexes = new Stack<int>();
+    private int totalSceneDancers = 0;
+    private int viewedDancers = 0;
+
+    #region Singleton
+    public static TutorialController Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    #endregion
 
     public void RestartTutorial()
     {
@@ -24,9 +42,6 @@ public class TutorialController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         clips = GetComponentsInChildren<TutorialClip>(true);
@@ -35,34 +50,13 @@ public class TutorialController : MonoBehaviour
 
         sessionName = "tut-" + System.DateTime.Now.ToString("MM-dd-yyy_hh-mm")+".txt";
         WriteLine("type, time, value, guess, correct");
+
+        //double security in case spiral is active in scene
+        spiralSystem.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (currentClip == 1 || currentClip == 9)
-        {
-            if (!indicatorSystem.activeSelf)
-            {
-                indicatorSystem.SetActive(true);
-                vanishSystem.SetActive(true);
-            }
-            Debug.Log(indicatorSystem.GetComponent<ParticleSystem>().isPlaying);
-            if (!indicatorSystem.GetComponent<ParticleSystem>().isPlaying)
-            {
-                indicatorSystem.GetComponent<ParticleSystem>().Play();
-            }
-            if (!vanishSystem.GetComponent<ParticleSystem>().isPlaying)
-            {
-                vanishSystem.GetComponent<ParticleSystem>().Play();
-            }
-        }
-        else
-        {
-            indicatorSystem.SetActive(false);
-            vanishSystem.SetActive(false);
-        }
-
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Previous();
@@ -70,6 +64,12 @@ public class TutorialController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Next();
+        }
+
+        //spiral activates once user views all dance sequences in scene
+        if (viewedDancers == totalSceneDancers && totalSceneDancers != 0)
+        {
+            spiralSystem.SetActive(true);
         }
     }
 
@@ -99,6 +99,7 @@ public class TutorialController : MonoBehaviour
             {
                 currentClip = clips.Length - 1;
             }
+            ReadyNextScene();
             LoadClip(currentClip);
         }
     }
@@ -106,6 +107,7 @@ public class TutorialController : MonoBehaviour
     {
         previousIndexes.Push(currentClip);
         currentClip = jumpIndex;
+        ReadyNextScene();
         LoadClip(currentClip);
     }
 
@@ -115,6 +117,7 @@ public class TutorialController : MonoBehaviour
         {
             currentClip = previousIndexes.Pop();
         }
+        ReadyNextScene();
         LoadClip(currentClip);
     }
 
@@ -130,7 +133,7 @@ public class TutorialController : MonoBehaviour
         clips[index].Play();
 
         currentClip = index;
-        text.text = index.ToString();
+        //text.text = index.ToString();
     }
 
     public void WriteLine(string line)
@@ -153,6 +156,52 @@ public class TutorialController : MonoBehaviour
             }
         }
 
+    }
+
+    public void incrementTotalDancers()
+    {
+        totalSceneDancers++;
+    }
+
+    public void incrementViewedDancers()
+    {
+        viewedDancers++;
+    }
+
+    private void resetDancerCount()
+    {
+        totalSceneDancers = 0;
+        viewedDancers = 0;
+    }
+
+    private void ReadyNextScene()
+    {
+        //activates particles if current scene requires particles, and particles are not activated
+        if (particleScenes.Contains(currentClip))
+        {
+            if (!IndicatorSystemController.Instance.gameObject.GetComponent<ParticleSystem>().isPlaying)
+            {
+                IndicatorSystemController.Instance.ActivateIndicators();
+            }
+        }
+        else
+        {
+            IndicatorSystemController.Instance.StopIndicators();
+        }
+
+        //activates arrow if current scene require arrow, and arrow is not activated
+        if (arrowScenes.Contains(currentClip))
+        {
+            //if arrow is already visible, ArrowFadeIn will not do anything
+            ArrowController.Instance.ArrowFadeIn();
+        }
+        else
+        {
+            ArrowController.Instance.ArrowFadeOut();
+        }
+
+        resetDancerCount();
+        spiralSystem.SetActive(false);
     }
 }
 

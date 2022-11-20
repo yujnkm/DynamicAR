@@ -34,8 +34,8 @@ public class VanishSystemController : MonoBehaviour
     }
 
     void Update()
-    {
-        //Finds targets
+    {   
+        /*//Finds targets
         if (targetObject == null)
         {
             targetObject = GameObject.FindGameObjectWithTag("Dancer");
@@ -67,11 +67,11 @@ public class VanishSystemController : MonoBehaviour
         }
         var timerShouldShow = TimerShouldShow();
         var globalShow = shouldShow && timerShouldShow;
-        /*
+        *//*
          * particle should only show if 
          * 1) the dancer is not within the user's field of view and
          * 2) enough time has since the particle last appeared
-         */
+         *//*
         if (globalShow)
         {
             fadeOut = false;
@@ -104,7 +104,7 @@ public class VanishSystemController : MonoBehaviour
         color.a = (byte) (alphaSet * 255);
         particles[0].startColor = color;
 
-        vanishSystem.SetParticles(particles);
+        vanishSystem.SetParticles(particles);*/
     }
     
     /*
