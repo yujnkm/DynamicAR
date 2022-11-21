@@ -17,7 +17,19 @@ public class SwitchController : MonoBehaviour
 
     private float time;
     private bool ready;
-    
+
+    #region Singleton
+    public static SwitchController Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance);
+        }
+        Instance = this;
+    }
+    #endregion
+
     void OnEnable()
     {
         time = 0f;
