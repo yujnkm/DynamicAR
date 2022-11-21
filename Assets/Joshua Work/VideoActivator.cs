@@ -40,6 +40,9 @@ public class VideoActivator : MonoBehaviour
             within = true;
             if (!activated)
             {
+                //marks object as found in the list
+                TargetObjectController.Instance.FindAndMarkObject(this.gameObject);
+
                 isReady = true;
                 activated = true;
             }

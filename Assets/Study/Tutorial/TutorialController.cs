@@ -15,10 +15,12 @@ public class TutorialController : MonoBehaviour
     public List<int> particleScenes;
     public List<int> arrowScenes;
     public GameObject spiralSystem;
+    public float autoActivateTime;
 
     private Stack<int> previousIndexes = new Stack<int>();
     private int totalSceneDancers = 0;
     private int viewedDancers = 0;
+    private float time = 0f;
 
     #region Singleton
     public static TutorialController Instance { get; private set; }
@@ -57,6 +59,7 @@ public class TutorialController : MonoBehaviour
 
     void Update()
     {
+        time += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Previous();
@@ -67,7 +70,7 @@ public class TutorialController : MonoBehaviour
         }
 
         //spiral activates once user views all dance sequences in scene
-        if (viewedDancers == totalSceneDancers && totalSceneDancers != 0)
+        if (time > autoActivateTime || viewedDancers == totalSceneDancers && totalSceneDancers != 0)
         {
             spiralSystem.SetActive(true);
         }
@@ -202,6 +205,7 @@ public class TutorialController : MonoBehaviour
 
         resetDancerCount();
         spiralSystem.SetActive(false);
+        time = 0f;
     }
 }
 
