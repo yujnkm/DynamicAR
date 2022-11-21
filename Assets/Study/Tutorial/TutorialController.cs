@@ -48,6 +48,7 @@ public class TutorialController : MonoBehaviour
     {
         clips = GetComponentsInChildren<TutorialClip>(true);
 
+        ReadyNextScene();
         LoadClip(currentClip);
 
         sessionName = "tut-" + System.DateTime.Now.ToString("MM-dd-yyy_hh-mm")+".txt";

@@ -21,14 +21,11 @@ public class TargetObjectController : MonoBehaviour
     public static TargetObjectController Instance { get; private set; }
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance != null)
         {
-            Destroy(this);
+            Destroy(Instance);
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
     }
     #endregion
 
