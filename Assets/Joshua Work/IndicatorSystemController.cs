@@ -24,6 +24,9 @@ public class IndicatorSystemController : MonoBehaviour
     private float initialSize;
     private float sizeChange = 0.05f;
     private const float EPSILON = 0.001f;
+    private const int DEFAULT = 0;
+    private const int THEATER = 3;
+    private GameObject prevTarget;
 
     #region Singleton
     public static IndicatorSystemController Instance { get; private set; }
@@ -46,9 +49,39 @@ public class IndicatorSystemController : MonoBehaviour
         initialSize = indicatorSystem.main.startSize.constant;
         particles = new ParticleSystem.Particle[maxParticles];
         collisions = new List<ParticleCollisionEvent>();
+        prevTarget = null;
     }
     void Update()
     {
+        /*
+         * if target has been changed, the previous target's layer will be set back to default, so particle won't collide
+         * the new target's layer will be set to Theater, which is a layer the particle can collide with
+         */
+        if (actualObject != null)
+        {
+            if (prevTarget != actualObject)
+            {
+                actualObject.layer = THEATER;
+                if (prevTarget != null)
+                {
+                    prevTarget.layer = DEFAULT;
+                }
+                prevTarget = actualObject;
+            }
+        }
+        else
+        {
+            if (prevTarget != targetObject)
+            {
+                targetObject.layer = THEATER;
+                if (prevTarget != null)
+                {
+                    prevTarget.layer = DEFAULT;
+                }
+                prevTarget = targetObject;
+            }
+        }
+
         time += Time.deltaTime;
         if (time > timeChange)
         {

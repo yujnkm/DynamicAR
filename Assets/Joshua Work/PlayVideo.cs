@@ -18,6 +18,8 @@ public class PlayVideo : MonoBehaviour
     private Renderer _renderer;
     private VideoActivator videoActivator;
     private Transform[] specialEffect;
+    private const int DEFAULT = 0;
+    private const int THEATER = 3;
 
     void Awake()
     {
@@ -30,6 +32,9 @@ public class PlayVideo : MonoBehaviour
         Color color = _renderer.material.color;
         color.a = 0f;
         _renderer.material.color = color;
+
+        //video can't collide with particle unless it is the target
+        this.gameObject.layer = DEFAULT;
 
         TutorialController.Instance.incrementTotalDancers();
     }

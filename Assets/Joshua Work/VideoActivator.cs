@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VideoActivator : MonoBehaviour
 {
-    public GameObject dancer;
+    //public GameObject dancer
 
     private bool isReady;
     private bool activated;
