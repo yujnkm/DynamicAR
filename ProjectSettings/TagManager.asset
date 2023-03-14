@@ -9,6 +9,7 @@ TagManager:
   - Target
   - PositionController
   - MainDance
+  - Bounds
   layers:
   - Default
   - TransparentFX
